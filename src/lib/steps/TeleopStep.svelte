@@ -1,12 +1,17 @@
 <script lang="ts">
   export let formData;
+
   import NumberInput from "$lib/components/NumberInput.svelte";
+  import Switch from "$lib/components/Switch.svelte";
 </script>
 
 <section>
   <div class="flex justify-between items-center w-full mb-4">
     <h1 class="text-2xl font-semibold">Teleop</h1>
     <h1 class="text-2xl font-semibold">3/4</h1>
+  </div>
+  <div class="mt-6 mb-6">
+      <Switch label="Removed Algae from reef" bind:value={formData.removedAlgae}/>
   </div>
   <div class="flex gap-4">
     <div>
