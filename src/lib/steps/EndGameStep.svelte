@@ -31,8 +31,6 @@
       </div>
     {/if}
 
-      <Switch label="Played as defense" bind:value={formData.endDefense} />
-      <Switch label="Robot has failed during match" bind:value={formData.endRobotFailed} />
     </div>
   </div>
 

@@ -10,8 +10,10 @@
     <h1 class="text-2xl font-semibold">Teleop</h1>
     <h1 class="text-2xl font-semibold">3/4</h1>
   </div>
-  <div class="mt-6 mb-6">
-      <Switch label="Removed Algae from reef" bind:value={formData.removedAlgae}/>
+  <div class="flex flex-col mt-6 mb-6 gap-2">
+      <Switch label="Removed Algae from Reef" bind:value={formData.removedAlgae}/>
+      <Switch label="Played as defense" bind:value={formData.playedDefense} />
+      <Switch label="Robot failed" bind:value={formData.robotFailed} />
   </div>
   <div class="flex gap-4">
     <div>

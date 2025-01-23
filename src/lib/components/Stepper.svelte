@@ -17,6 +17,7 @@
     matchLevel: 'Quali',
 
     // auto
+    removedAlgae: false,
     autoL1Corals: 0,
     autoL2Corals: 0,
     autoL3Corals: 0,
@@ -26,6 +27,8 @@
     autoNet: 0,
 
     // tele
+    playedDefense: 'off',
+    robotFailed: 'off',
     teleL1Corals: 0,
     teleL2Corals: 0,
     teleL3Corals: 0,
@@ -38,11 +41,8 @@
     endClimbAttempt: 'off',
     endClimbLevel: '',
     endClimbFailed: 'off',
-    endDefense: 'off',
-    endRobotFailed: 'off',
     endFouls: 0,
-    comments: '',
-    removedAlgae: false
+    comments: ''
   });
 
   const steps = [StartStep, PreGameStep, AutonomousStep, TeleopStep, EndGameStep];
