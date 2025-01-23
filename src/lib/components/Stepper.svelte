@@ -8,7 +8,7 @@
   let currentStep = $state(0);
   let { email, name } = $props();
 
-  let formData = {
+  let formData = $state({
     // pre
     name: name,
     email: email,
@@ -43,7 +43,7 @@
     endFouls: 0,
     comments: '',
     removedAlgae: false
-  };
+  });
 
   const steps = [StartStep, PreGameStep, AutonomousStep, TeleopStep, EndGameStep];
 
