@@ -8,7 +8,7 @@
   let currentStep = $state(0);
   let { email, name } = $props();
 
-  let formData = $state({
+  let formData = $derived({
     // pre
     name: name,
     email: email,
