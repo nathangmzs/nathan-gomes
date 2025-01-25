@@ -91,13 +91,13 @@
     {#if currentStep === 0}
       <StartStep {formData}/>
     {:else if currentStep === 1}
-      <PreGameStep {formData} />
+      <PreGameStep {formData}/>
     {:else if currentStep === 2}
-      <AutonomousStep {formData} />
+      <AutonomousStep {formData}/>
     {:else if currentStep === 3}
-      <TeleopStep {formData} />
+      <TeleopStep {formData}/>
     {:else if currentStep === 4}
-      <EndGameStep {formData} />
+      <EndGameStep {formData}/>
     {/if}
   {/key}
 
