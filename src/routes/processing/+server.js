@@ -39,7 +39,6 @@ export async function POST({ request }) {
 
         // auto
         autoLeft: data.autoLeft,
-        robotFailed: data.robotFailed,
         autoL1Corals: data.autoL1Corals,
         autoL2Corals: data.autoL2Corals,
         autoL3Corals: data.autoL3Corals,
@@ -49,9 +48,11 @@ export async function POST({ request }) {
 
         // auto + tele
         removedAlgae: data.removedAlgae,
-        playedDefense: data.playedDefense,
+        robotFailed: data.robotFailed,
+
 
         // tele
+        playedDefense: data.playedDefense,
         teleL1Corals: data.teleL1Corals,
         teleL2Corals: data.teleL2Corals,
         teleL3Corals: data.teleL3Corals,

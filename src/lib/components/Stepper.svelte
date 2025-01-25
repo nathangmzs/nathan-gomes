@@ -18,7 +18,6 @@
 
     // auto
     autoLeft: 'off',
-    robotFailed: 'off',
     autoL1Corals: 0,
     autoL2Corals: 0,
     autoL3Corals: 0,
@@ -28,9 +27,11 @@
 
     // auto + tele
     removedAlgae: 'off',
-    playedDefense: 'off',
+    robotFailed: 'off',
+
 
     // tele
+    playedDefense: 'off',
     teleL1Corals: 0,
     teleL2Corals: 0,
     teleL3Corals: 0,
