@@ -18,6 +18,7 @@
 
     // auto
     removedAlgae: false,
+    robotFailed: 'off',
     autoL1Corals: 0,
     autoL2Corals: 0,
     autoL3Corals: 0,
@@ -28,7 +29,6 @@
 
     // tele
     playedDefense: 'off',
-    robotFailed: 'off',
     teleL1Corals: 0,
     teleL2Corals: 0,
     teleL3Corals: 0,
@@ -86,7 +86,7 @@
 </script>
 
 <section class="flex flex-col items-center">
-  <!--<svelte:component this={steps[currentStep]} {formData} />-->
+  <!--<svelte:component this={steps[currentStep]} {formData}/>-->
   {#key currentStep}
     {#if currentStep === 0}
       <StartStep {formData}/>

@@ -13,6 +13,7 @@
   <div class="flex flex-col mt-6 mb-6 gap-2">
     <Switch label="Robot has left starting line" bind:value={formData.autoLeft}/>
     <Switch label="Removed Algae from Reef" bind:value={formData.removedAlgae}/>
+    <Switch label="Robot failed" bind:value={formData.robotFailed}/>
   </div>
   <div class="flex gap-4">
     <div>
