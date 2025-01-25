@@ -28,11 +28,10 @@ export async function POST({ request }) {
 
     await doc.loadInfo();
     const brba = doc.sheetsByTitle["BRBA"];
-
     brba.addRows([
       {
         name: data.name,
-        email: data.email,
+        email: data.email.emailAddress,
         teamNumber: data.teamNumber,
         matchNumber: data.matchNumber,
         matchLevel: data.matchLevel,
@@ -49,7 +48,6 @@ export async function POST({ request }) {
         // auto + tele
         removedAlgae: data.removedAlgae,
         robotFailed: data.robotFailed,
-
 
         // tele
         playedDefense: data.playedDefense,
@@ -78,4 +76,5 @@ export async function POST({ request }) {
       { status: 500 }
     );
   }
+    
 }
