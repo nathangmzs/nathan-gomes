@@ -22,10 +22,10 @@
   <a href="/sign-in">Sign in</a> <span>|</span> <a href="/sign-up">Sign up</a>
 {:else}
   <div class="ml-4 mt-4">
-    <UserButton afterSignOutUrl="/" />
+    <UserButton afterSignOutUrl="/"/>
   </div>
   <section class="mt-10 flex flex-col justify-center">
     <!-- {typeof(JSON.stringify(user?.emailAddresses))} -->
-    <Stepper name={userFullName} email={userEmail} />
+    <Stepper name={userFullName} email={userEmail}/>
   </section>
 {/if}

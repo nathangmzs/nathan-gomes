@@ -19,15 +19,15 @@
       <h1 class="text-2x l font-semibold">4/4</h1>
     </div>
     <div class="flex flex-col mb-6 mt-6 gap-2">
-      <Switch label="Parked on Barge area" bind:value={formData.endPark} />
-      <Switch label="Attempted to climb on a cage" bind:value={formData.endClimbAttempt} />
+      <Switch label="Parked on Barge area" bind:value={formData.endPark}/>
+      <Switch label="Attempted to climb on a cage" bind:value={formData.endClimbAttempt}/>
 
     {#if formData.endClimbAttempt == 'on'}
       <div class="flex flex-col gap-2">
         <RadioGroup options={climbOptions} bind:selected={formData.endClimbLevel}/>
         {formData.climbLevel}
 
-        <Switch label="Failed to climb" bind:value={formData.endClimbFailed} />
+        <Switch label="Failed to climb" bind:value={formData.endClimbFailed}/>
       </div>
     {/if}
 
@@ -35,7 +35,7 @@
   </div>
 
   <div>
-    <TextInput size="medium" placeholder="Comments" bind:value={formData.comments} />
+    <TextInput size="medium" placeholder="Comments" bind:value={formData.comments}/>
   </div>
 
   <div class="flex flex-col mt-4">

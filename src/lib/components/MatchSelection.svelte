@@ -1,6 +1,6 @@
 <script lang="ts">
-	import RadioGroup from './RadioGroup.svelte';
 	import NumberInput from './NumberInput.svelte';
+	import RadioGroup from './RadioGroup.svelte';
 
 	let tournamentOptions = [
 		{ value: 'practice', label: 'Practice' },
@@ -18,6 +18,6 @@
     </div>
     <div class="flex flex-col gap-1">
         <h3>Match number:</h3>
-        <NumberInput max={150} />
+        <NumberInput max={150}/>
     </div>
 </section>
