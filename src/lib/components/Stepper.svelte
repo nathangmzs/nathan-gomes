@@ -89,7 +89,6 @@
 </script>
 
 <section class="flex flex-col items-center">
-  <!--<svelte:component this={steps[currentStep]} {formData}/>-->
   {#key currentStep}
     {#if currentStep === 0}
       <StartStep {formData}/>
