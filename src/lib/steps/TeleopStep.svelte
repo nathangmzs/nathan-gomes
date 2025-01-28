@@ -11,8 +11,8 @@
     <h1 class="text-2xl font-semibold">3/4</h1>
   </div>
   <div class="flex flex-col mt-6 mb-6 gap-2">
-      <Switch label="Removed Algae from Reef" bind:value={formData.removedAlgae}/>
       <Switch label="Played as defense" bind:value={formData.playedDefense}/>
+      <Switch label="Removed Algae from Reef" bind:value={formData.removedAlgae}/>
       <Switch label="Robot failed" bind:value={formData.robotFailed}/>
   </div>
   <div class="flex gap-4">

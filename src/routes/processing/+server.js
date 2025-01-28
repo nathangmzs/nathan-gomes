@@ -28,28 +28,29 @@ export async function POST({ request }) {
 
     await doc.loadInfo();
     const brba = doc.sheetsByTitle["BRBA"];
-
     brba.addRows([
       {
         name: data.name,
-        email: data.email,
+        email: data.email.emailAddress,
         teamNumber: data.teamNumber,
         matchNumber: data.matchNumber,
         matchLevel: data.matchLevel,
 
         // auto
-        removedAlgae: data.removedAlgae,
+        autoLeft: data.autoLeft,
         autoL1Corals: data.autoL1Corals,
         autoL2Corals: data.autoL2Corals,
         autoL3Corals: data.autoL3Corals,
         autoL4Corals: data.autoL4Corals,
         autoProcessor: data.autoProcessor,
         autoNet: data.autoNet,
-        autoLeft: data.autoLeft,
+
+        // auto + tele
+        removedAlgae: data.removedAlgae,
+        robotFailed: data.robotFailed,
 
         // tele
         playedDefense: data.playedDefense,
-        robotFailed: data.robotFailed,
         teleL1Corals: data.teleL1Corals,
         teleL2Corals: data.teleL2Corals,
         teleL3Corals: data.teleL3Corals,
@@ -62,8 +63,8 @@ export async function POST({ request }) {
         endClimbAttempt: data.endClimbAttempt,
         endClimbLevel: data.endClimbLevel,
         endClimbFailed: data.endClimbFailed,
-        endFouls: data.endFouls,
         comments: data.comments,
+        endFouls: data.endFouls,
       },
     ]);
 
@@ -75,4 +76,5 @@ export async function POST({ request }) {
       { status: 500 }
     );
   }
+    
 }
