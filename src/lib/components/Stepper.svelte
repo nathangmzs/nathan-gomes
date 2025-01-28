@@ -1,23 +1,23 @@
-<script>
-  import AutonomousStep from '$lib/steps/AutonomousStep.svelte';
-  import EndGameStep from '$lib/steps/EndGameStep.svelte';
-  import PreGameStep from '$lib/steps/PreGameStep.svelte';
-  import StartStep from '$lib/steps/StartStep.svelte';
-  import TeleopStep from '$lib/steps/TeleopStep.svelte';
+<script lang="ts">
+  import AutonomousStep from "$lib/steps/AutonomousStep.svelte";
+  import EndGameStep from "$lib/steps/EndGameStep.svelte";
+  import PreGameStep from "$lib/steps/PreGameStep.svelte";
+  import StartStep from "$lib/steps/StartStep.svelte";
+  import TeleopStep from "$lib/steps/TeleopStep.svelte";
 
   let currentStep = $state(0);
-  let { email, name } = $props();
+  let { email, name, teams } = $props();
 
   let formData = $derived({
     // pre
     name: name,
     email: email,
-    teamNumber: '',
-    matchNumber: 0,
-    matchLevel: 'Quali',
+    teamNumber: "",
+    matchNumber: 1,
+    matchLevel: "practice",
 
     // auto
-    autoLeft: 'off',
+    autoLeft: "off",
     autoL1Corals: 0,
     autoL2Corals: 0,
     autoL3Corals: 0,
@@ -26,12 +26,11 @@
     autoNet: 0,
 
     // auto + tele
-    removedAlgae: 'off',
-    robotFailed: 'off',
-
+    removedAlgae: "off",
+    robotFailed: "off",
 
     // tele
-    playedDefense: 'off',
+    playedDefense: "off",
     teleL1Corals: 0,
     teleL2Corals: 0,
     teleL3Corals: 0,
@@ -40,15 +39,21 @@
     teleNet: 0,
 
     // end
-    endPark: 'off',
-    endClimbAttempt: 'off', 
-    endClimbLevel: '',
-    endClimbFailed: 'off',
-    comments: '',
+    endPark: "off",
+    endClimbAttempt: "off",
+    endClimbLevel: "",
+    endClimbFailed: "off",
+    comments: "",
     endFouls: 0,
   });
 
-  const steps = [StartStep, PreGameStep, AutonomousStep, TeleopStep, EndGameStep];
+  const steps = [
+    StartStep,
+    PreGameStep,
+    AutonomousStep,
+    TeleopStep,
+    EndGameStep,
+  ];
 
   function nextStep() {
     if (currentStep < steps.length - 1) {
@@ -68,10 +73,10 @@
     console.log(formData);
 
     try {
-      const res = await fetch('/processing', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+      const res = await fetch("/processing", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       const responseData = await res.json();
@@ -80,26 +85,26 @@
         console.error(responseData.message);
         return;
       }
-      console.log('Server response:', responseData);
+      console.log("Server response:", responseData);
     } catch (err) {
-      console.error('Erro ao enviar dados:', err);
+      console.error("Erro ao enviar dados:", err);
     }
-    location.reload()
+    location.reload();
   }
 </script>
 
 <section class="flex flex-col items-center">
   {#key currentStep}
     {#if currentStep === 0}
-      <StartStep {formData}/>
+      <StartStep {formData} />
     {:else if currentStep === 1}
-      <PreGameStep {formData}/>
+      <PreGameStep {formData} teams={teams}/>
     {:else if currentStep === 2}
-      <AutonomousStep {formData}/>
+      <AutonomousStep {formData} />
     {:else if currentStep === 3}
-      <TeleopStep {formData}/>
+      <TeleopStep {formData} />
     {:else if currentStep === 4}
-      <EndGameStep {formData}/>
+      <EndGameStep {formData} />
     {/if}
   {/key}
 
