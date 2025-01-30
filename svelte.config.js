@@ -6,7 +6,6 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		target: '#svelte',
 		adapter: node()
 	}
 };
