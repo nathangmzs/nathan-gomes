@@ -1,6 +1,4 @@
 <script lang="ts">
-    let values = $state();
-
     let { options, selected = $bindable() } = $props();
 
     function onChange(event: Event) {
