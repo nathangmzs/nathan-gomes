@@ -4,7 +4,6 @@
   import "../app.css";
 
   const { children }: { children: Snippet } = $props();
-  export const prerender = true;
 </script>
 
 <!-- ... -->
