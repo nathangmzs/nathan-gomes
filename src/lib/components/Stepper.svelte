@@ -4,6 +4,7 @@
     import PreGameStep from "$lib/steps/PreGameStep.svelte";
     import StartStep from "$lib/steps/StartStep.svelte";
     import TeleopStep from "$lib/steps/TeleopStep.svelte";
+    import { onMount } from "svelte";
 
     let currentStep = $state(0);
     let { email, name, teams } = $props();
@@ -85,11 +86,46 @@
                 console.error(responseData.message);
                 return;
             }
+
             console.log("Server response:", responseData);
+
+            // resetando o form
+            currentStep = 0;
+            formData.matchNumber++;
+            formData.teamNumber = "";
+
+            // auto
+            formData.autoLeft = "off";
+            formData.autoL1Corals = 0;
+            formData.autoL2Corals = 0;
+            formData.autoL3Corals = 0;
+            formData.autoL4Corals = 0;
+            formData.autoProcessor = 0;
+            formData.autoNet = 0;
+
+            // auto + tele
+            formData.removedAlgae = "off";
+            formData.robotFailed = "off";
+
+            // tele
+            formData.playedDefense = "off";
+            formData.teleL1Corals = 0;
+            formData.teleL2Corals = 0;
+            formData.teleL3Corals = 0;
+            formData.teleL4Corals = 0;
+            formData.teleProcessor = 0;
+            formData.teleNet = 0;
+
+            // end
+            formData.endPark = "off";
+            formData.endClimbAttempt = "off";
+            formData.endClimbLevel = "";
+            formData.endClimbFailed = "off";
+            formData.comments = "";
+            formData.endFouls = 0;
         } catch (err) {
             console.error("Erro ao enviar dados:", err);
         }
-        location.reload();
     }
 </script>
 
