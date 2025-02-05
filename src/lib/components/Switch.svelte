@@ -1,22 +1,22 @@
 <script>
   let { label, fontSize = 16, value = $bindable() } = $props();
-  let checked = $state(value === 'on' || false);
+  let checked = $state(value === "on" || false);
 
-  if (value !== 'on') value = 'off';
+  if (value !== "on") value = "off";
 
   const uniqueID = Math.floor(Math.random() * 100);
 
   function handleClick(event) {
     const target = event.target;
 
-    const state = target.getAttribute('aria-checked');
+    const state = target.getAttribute("aria-checked");
 
-    checked = state === 'true' ? false : true;
+    checked = state === "true" ? false : true;
 
-    value = checked === true ? 'on' : 'off';
+    value = checked === true ? "on" : "off";
   }
 
-  const slugify = (str = '') => str.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
+  const slugify = (str = "") => str.toLowerCase().replace(/ /g, "-").replace(/\./g, "");
 </script>
 
 <div class="s s--slider flex justify-center" style="font-size:{fontSize}px">
@@ -51,7 +51,7 @@
   }
 
   .s--slider button::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 1.3em;
     height: 1.3em;
@@ -61,11 +61,11 @@
     transition: transform 0.3s;
   }
 
-  .s--slider button[aria-checked='true'] {
+  .s--slider button[aria-checked="true"] {
     background-color: var(--accent-color);
   }
 
-  .s--slider button[aria-checked='true']::before {
+  .s--slider button[aria-checked="true"]::before {
     transform: translateX(1.3em);
     transition: transform 0.3s;
   }

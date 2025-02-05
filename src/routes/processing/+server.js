@@ -15,10 +15,7 @@ const jwt = new JWT({
   scopes: SCOPES,
 });
 
-const doc = new GoogleSpreadsheet(
-  "1gZv_PPdWqnUHL3vysYP8IGss4Oh_3dtMRjev4x4UUis",
-  jwt
-);
+const doc = new GoogleSpreadsheet("1gZv_PPdWqnUHL3vysYP8IGss4Oh_3dtMRjev4x4UUis", jwt);
 
 export async function POST({ request }) {
   try {
@@ -71,10 +68,6 @@ export async function POST({ request }) {
     return json({ success: true, message: "Data received with success." });
   } catch (err) {
     console.log("Erro: ", err);
-    return json(
-      { success: false, message: "Error with data processing." },
-      { status: 500 }
-    );
+    return json({ success: false, message: "Error with data processing." }, { status: 500 });
   }
-    
 }

@@ -1,6 +1,4 @@
 <script lang="ts">
-  let values = $state();
-
   let { options, selected = $bindable() } = $props();
 
   function onChange(event: Event) {
@@ -8,9 +6,7 @@
   }
 </script>
 
-<div
-  class="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap- justify-center"
->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap- justify-center">
   {#each options as { value, label }}
     <label class="flex items-center">
       <input

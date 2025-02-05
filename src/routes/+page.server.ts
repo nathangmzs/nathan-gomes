@@ -18,7 +18,7 @@ export const load: PageServerLoad = async () => {
     try {
       const response = await fetch(
         "https://frc-api.firstinspires.org/v3.0/2024/schedule/BRBR?tournamentLevel=Qual",
-        requestOptions
+        requestOptions,
       );
 
       if (!response.ok) {

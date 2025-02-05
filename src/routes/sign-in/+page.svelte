@@ -2,6 +2,6 @@
   import { SignIn } from "svelte-clerk";
 </script>
 
-<div>
-  <SignIn redirectUrl="/"/>
+<div class="flex items-center justify-center h-screen">
+  <SignIn redirectUrl="/" />
 </div>

@@ -11,40 +11,39 @@
     <h1 class="text-2xl font-semibold">2/4</h1>
   </div>
   <div class="flex flex-col mt-6 mb-6 gap-2">
-    <Switch label="Robot has left starting line" bind:value={formData.autoLeft}/>
-    <Switch label="Removed Algae from Reef" bind:value={formData.removedAlgae}/>
-    <Switch label="Robot failed" bind:value={formData.robotFailed}/>
+    <Switch label="Robot has left starting line" bind:value={formData.autoLeft} />
+    <Switch label="Removed Algae from Reef" bind:value={formData.removedAlgae} />
+    <Switch label="Robot failed" bind:value={formData.robotFailed} />
   </div>
   <div class="flex gap-4">
     <div>
       <h3>L1 🪸</h3>
-      <NumberInput max={7} bind:value={formData.autoL1Corals}/>
+      <NumberInput max={7} bind:value={formData.autoL1Corals} />
     </div>
     <div>
       <h3>L2 🪸</h3>
-      <NumberInput max={7} bind:value={formData.autoL2Corals}/>
+      <NumberInput max={7} bind:value={formData.autoL2Corals} />
     </div>
   </div>
 
   <div class="flex gap-4 mt-4">
     <div>
       <h3>L3 🪸</h3>
-      <NumberInput max={7} bind:value={formData.autoL3Corals}/>
+      <NumberInput max={7} bind:value={formData.autoL3Corals} />
     </div>
     <div>
       <h3>L4 🪸</h3>
-      <NumberInput max={7} bind:value={formData.autoL4Corals}/>
+      <NumberInput max={7} bind:value={formData.autoL4Corals} />
     </div>
   </div>
   <div class="flex gap-4 mt-4">
     <div>
       <h3>Processor 🥅</h3>
-      <NumberInput max={7} bind:value={formData.autoProcessor}/>
+      <NumberInput max={7} bind:value={formData.autoProcessor} />
     </div>
     <div>
       <h3>Net 🥅</h3>
-      <NumberInput max={7} bind:value={formData.autoNet}/>
+      <NumberInput max={7} bind:value={formData.autoNet} />
     </div>
   </div>
 </section>
-
