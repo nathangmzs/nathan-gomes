@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belém Limpa - Mapa de Coleta</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Limpa Belém</h1>
+        <p>Encontre o ponto de coleta ideal na sua região.</p>
+    </header>
+
+    <div id="alert-banner" class="alert-info">
+        🚨 Alerta: O ponto do Ver-o-Peso estará fechado na próxima segunda-feira (27/Nov).
+    </div>
+
+    <main>
+        <div id="filter-controls">
+            <label for="tipoLixo">Filtrar por Tipo:</label>
+            <select id="tipoLixo">
+                <option value="todos">Todos os Tipos</option>
+                <option value="organico">Orgânico</option>
+                <option value="reciclavel">Reciclável</option>
+                <option value="eletronico">Eletrônico</option>
+                <option value="oleo">Óleo de Cozinha</option>
+            </select>
+            <button onclick="getUserLocation()">📍 Ponto Mais Próximo</button>
+        </div>
+
+        <div id="map"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Belém Limpa. Projeto de Melhoria Urbana.</p>
+        <a href="#guia">Guia Rápido de Descarte</a>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
